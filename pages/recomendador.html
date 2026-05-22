@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moodflix - Recomendador</title>
+        <link rel = "stylesheet" href = "css/styles.css"/>
+        <link rel="stylesheet" href= "css/recomendador.css"/>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="index.html" class="nav-logo">Moodflix</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recomendador.html" class="active">Recomendador</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-recomendador">
+                <h1>¿Qué querés ver hoy?</h1>
+                <p>Contanos como te sentís y cuanto tiempo tenes disponible. Nosotros te recomendamos</p>
+            </section>
+
+            <section class="seccion-filtros">
+                <div class="filtros-container">
+                    <div class="filtro-grupo">
+                        <label for="select-animo">¿Cómo te sentís?</label>
+                        <select id="select-animo">
+                            <option value="todos">-- Cualquier ánimo --</option>
+                            <option value="feliz">😊 Feliz</option>
+                            <option value="triste">😢 Triste</option>
+                            <option value="aburrido">😑 Aburrido</option>
+                            <option value="romantico">💕 Romantico</option>
+                        </select>
+                    </div>
+                    <div class="filtro-grupo">
+                        <label for="select-tiempo">¿Cuánto tiempo tenés?</label>
+                        <select id="select-tiempo">
+                            <option value="todos">-- Cualquier duración --</option>
+                            <option value="30-60">30 - 60 min</option>
+                            <option value="60-120">1 - 2 horas</option>
+                            <option value="120+">Más de 2 horas</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <label for="select-tipo">¿Qué tipo de contenido te interesa?</label>
+                        <select id="select-tipo">
+                            <option value="todos">-- Cualquier tipo --</option>
+                            <option value="pelicula">🎬 Película</option>
+                            <option value="serie">📺 Serie</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+    </body>
+</html>
