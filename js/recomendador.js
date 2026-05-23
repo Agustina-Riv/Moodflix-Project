@@ -78,6 +78,7 @@ function mostrarResultados(lista) {
             </div>
             <div class="card.body">
                 <h3 class="card-titulo">${item.titulo}</h3>
+                <p class="card-descripcion">${item.descripcion}</p>
                 <div class="card-meta">
                     <span class="card-animo">${animoPrincipal}</span>
                     <span class="card-duracion">${duracionTexto}</span>
@@ -127,3 +128,41 @@ function mostrarToast(texto) {
     toast.classList.add("toast-visible");
     setTimeout(() => toast.classList.remove("toast-visible"), 2500);
 }
+
+function limpiarFiltros() {
+    selectAnimo.value = "todos";
+    selectTiempo.value = "todos";
+    selectTipo.value = "todos";
+    contenedor.innerHTML = "";
+    mensaje.style.display = "none";
+}
+
+function capitalizarAnimo(animo) {
+    const mapa = {
+        feliz: "😊 Feliz",
+        triste: "😢 Triste",
+        aburrido: "😐 Aburrido",
+        romantico: "❤️ Romántico"
+    };
+    return mapa[animo] || animo;
+}
+
+function cargarAnimoPrevio() {
+    const animoGuardado = localStorage.getItem("animo");
+    if (animoGuardado && selectAnimo.querySelector(`option[value="${animoGuardado}"]`)) {
+        selectAnimo.value = animoGuardado;
+    }
+}
+
+btnFiltrar.addEventListener("click", filtrarContenido);
+btnLimpiar.addEventListener("click", limpiarFiltros);
+
+[selectAnimo, selectTiempo, selectTipo].forEach(sel => {
+    sel.addEventListener("change", filtrarContenido);
+});
+
+cargarAnimoPrevio();
+
+if (localStorage.getItem("animo")) {
+    filtrarContenido();
+};
