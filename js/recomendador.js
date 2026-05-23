@@ -89,3 +89,29 @@ function mostrarResultados(lista) {
         contenedor.appendChild(card);
     });
 }
+
+// guardar en favoritos (usa localStorage, y lo lee favoritos.js)
+
+function guardarFavorito(id) {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    const yaGuardado = favoritos.find(f => f.id === id);
+    if (yaGuardado) {
+        mostrarToast("Ya está en tus favoritos 👀");
+        return;
+    }
+
+    const item = catalogo.find(c => c.id === id);
+    if (!item) return;
+
+    favoritos.push(item);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    mostrarToast(`✓ "${item.titulo}" agregado a favoritos`);
+
+    const card = document.querySelector(`.card[data-id="${id}"] .btn-favorito`);
+    if (card) {
+        card.textContent = "✓ En favoritos";
+        card.classList.add("btn-favorito--guardado");
+        card.ariaDisabled = "true";
+    }
+}
