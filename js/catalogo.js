@@ -7,7 +7,7 @@ const catalogo = [
     animo: ["feliz", "aburrido"],
     duracion: 22,
     descripcion: "Seis amigos navegan la vida adulta en Nueva York con mucho humor.",
-    imagen: "https://placehold.co/300x170/1a1a2e/e0e0ff?text=Friends"
+    imagen: "../img/friends.jpg"
   },
   {
     id: 2,

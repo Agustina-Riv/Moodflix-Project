@@ -241,6 +241,17 @@
   margin-top: 0.2rem;
 }
 
+.card-descripcion {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 300;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .card-animo {
   display: flex;
   align-items: center;
