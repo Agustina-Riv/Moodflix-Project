@@ -115,3 +115,15 @@ function guardarFavorito(id) {
         card.ariaDisabled = "true";
     }
 }
+
+function mostrarToast(texto) {
+    let toast = document.getElementById("toast");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "toast";
+        document.body.appendChild(toast);
+    }
+    toast.textContent = texto;
+    toast.classList.add("toast-visible");
+    setTimeout(() => toast.classList.remove("toast-visible"), 2500);
+}
