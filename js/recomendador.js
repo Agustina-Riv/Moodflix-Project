@@ -40,3 +40,52 @@ function filtrarContenido () {
 
     mostrarResultados(resultados);
 }
+
+// cards
+
+function mostrarResultados(lista) {
+    contenedor.innerHTML = "";
+
+    if (lista.length === 0) {
+        mensaje.textContent = "No encontramos nada para esa combinación. ¡Probá otros filtros!";
+        mensaje.style.display = "block";
+        return;
+    }
+
+    mensaje.style.display = "none";
+
+    const cantidad = lista.length;
+    mensaje.textContent = `${cantidad} resultado${cantidad !== 1 ? "s" : ""} encontrado${cantidad !== 1 ? "s" : ""}`;
+    mensaje.style.display = "block";
+
+    lista.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute("data-id", item.id);
+
+        const tipoBadge = item.tipo === "serie" ? "Serie" : "Película";
+        const badgeExtra = item.tipo === "película" ? "card-badge--pelicula" : "";
+        const duracionTexto = item.tipo === "serie"
+        ? `${item.duracion} min / ep.`
+        : `${item.duracion} min`;
+        const animoPrincipal = capitalizarAnimo(item.animo[0]);
+
+        card.innerHTML = `
+            <div class="card-img-wrapper">
+                <img src="${item.imagen}" alt="${item.titulo}" class="card-img">
+                <span class="card-badge ${badgeExtra}">${tipoBadge}
+                </span>
+            </div>
+            <div class="card.body">
+                <h3 class="card-titulo">${item.titulo}</h3>
+                <div class="card-meta">
+                    <span class="card-animo">${animoPrincipal}</span>
+                    <span class="card-duracion">${duracionTexto}</span>
+                </div>
+                <button class= "btn-favorito" onclick="guardarFavorito(${item.id})"> Guardar
+                </button>
+            </div>
+        `;
+        contenedor.appendChild(card);
+    });
+}
