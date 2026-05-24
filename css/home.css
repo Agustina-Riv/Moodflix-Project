@@ -1,0 +1,345 @@
+/* ==========================================
+   1. VARIABLES OFICIALES DEL GRUPO Y RESET
+   ========================================== */
+:root {
+    --bg-color: #0f172a; 
+    --card-bg: #1e293b;  
+    --text-main: #f1f5f9; 
+    --text-muted: #94a3b8; 
+    
+    --primary-color: #38bdf8; 
+    --primary-hover: #0284c7;
+    
+    --danger-color: #fb7185; 
+    --danger-hover: #e11d48; 
+    
+    --border-radius: 12px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* ==========================================
+   2. ESTILOS DEL NAV (MENÚ DE NAVEGACIÓN)
+   ========================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 64px;
+    background-color: rgba(15, 23, 42, 0.95); /* Color de fondo usando tu --bg-color con opacidad */
+    border-bottom: 1px solid var(--card-bg); /* Separador usando tu color de tarjetas */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    color: var(--primary-color); /* Tu celeste principal */
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.nav-logo:hover {
+    color: var(--primary-hover);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    color: var(--text-muted); /* Tu texto secundario */
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* ==========================================
+   3. ESTILOS DEL HERO (CONTENEDOR Y TEXTOS)
+   ========================================== */
+.hero-container {
+    min-height: 70vh; /* Ocupa buena parte de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 2rem;
+    background-color: var(--bg-color); /* Fondo oficial oscuro del grupo */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 750px; /* Evita que el texto se estire demasiado hacia los lados */
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-main); /* Blanco/gris claro oficial */
+}
+
+.hero-content .subtitulo {
+    font-size: 1.15rem;
+    color: var(--text-muted); /* Gris apagado oficial */
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================
+   4. BOTONES DEL HERO
+   ========================================== */
+.hero-botones {
+    display: flex;
+    gap: 1.5rem; /* Espacio de separación entre ambos */
+    justify-content: center; /* Los centra en la pantalla */
+}
+
+/* Base para ambos botones */
+.btn-principal, .btn-secundario {
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius); /* Tus 12px oficiales */
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    border: none;
+}
+
+/* Botón "Empezar ahora" (Lleno con tu celeste) */
+.btn-principal {
+    background-color: var(--primary-color);
+    color: #0f172a; /* Color oscuro para que contraste y sea legible */
+}
+
+.btn-principal:hover {
+    background-color: var(--primary-hover); /* Tu celeste oscuro de hover */
+}
+
+/* Botón "Ver mis favoritos" (Transparente con borde celeste) */
+.btn-secundario {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secundario:hover {
+    background-color: var(--primary-hover);
+    color: var(--text-main); /* Cambia el texto a blanco al pasar el mouse */
+    border-color: var(--primary-hover);
+}
+
+/* ==========================================
+   5. SECCIÓN: ¿QUÉ ES MOODFLIX?
+   ========================================== */
+.moodflix-info {
+    max-width: 800px;
+    margin: 5rem auto; /* Centra la sección y le da aire arriba y abajo */
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.moodflix-info h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color); /* Tu celeste oficial para destacar el título */
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.moodflix-info p {
+    font-size: 1.1rem;
+    color: var(--text-main); /* Tu texto claro oficial */
+    line-height: 1.7; /* Para que el párrafo respire y se lea cómodo */
+}
+
+/* ==========================================
+   6. SECCIÓN: CÓMO FUNCIONA
+   ========================================== */
+.como-funciona {
+    max-width: 1100px;
+    margin: 5rem auto; /* Espaciado arriba/abajo y centrado */
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.como-funciona h2 {
+    font-size: 2.2rem;
+    color: var(--text-main); /* Título principal claro */
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* El contenedor que alinea los 3 pasos en fila */
+.pasos-contenedor {
+    display: flex;
+    gap: 2rem; /* Separación pareja entre las tarjetas */
+    justify-content: space-between;
+}
+
+/* Cada una de las 3 tarjetas de pasos */
+.paso {
+    flex: 1; /* Hace que las 3 tarjetas tengan exactamente el mismo ancho */
+    background-color: var(--card-bg); /* Fondo oficial de tarjeta del grupo */
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--border-radius); /* Tus 12px oficiales */
+    transition: transform var(--transition); /* Suavidad para el efecto hover */
+}
+
+/* Efecto visual: la tarjeta sube un poquito cuando le pasás el mouse */
+.paso:hover {
+    transform: translateY(-5px);
+}
+
+.paso-icono {
+    font-size: 2.5rem; /* Emojis grandes y llamativos */
+    margin-bottom: 1.2rem;
+}
+
+.paso h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color); /* Tus títulos en celeste brillante */
+    margin-bottom: 1rem;
+}
+
+.paso p {
+    font-size: 0.95rem;
+    color: var(--text-muted); /* Texto secundario grisáceo */
+    line-height: 1.5;
+}
+
+/* ==========================================
+   7. SECCIÓN: LAS MÁS VISTAS (CUPONES / TARJETAS)
+   ========================================== */
+.mas-vistas {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.mas-vistas h2 {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* La grilla inteligente que divide el espacio en 4 columnas iguales */
+.peliculas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* Espacio entre tarjetas */
+}
+
+/* Tarjeta individual de película */
+.pelicula-card {
+    background-color: var(--card-bg); /* Tu fondo oficial */
+    border-radius: var(--border-radius); /* Tus 12px oficiales */
+    overflow: hidden; /* Corta las esquinas de la imagen para que sigan el radio de la tarjeta */
+    transition: transform var(--transition);
+    padding-bottom: 1.5rem;
+}
+
+.pelicula-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de la imagen para poder flotar el badge encima */
+.imagen-contenedor {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Altura fija para que todas las portadas midan igual */
+    background-color: #0b111e; /* Fondo oscuro de carga por si la imagen tarda */
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen proporcionalmente para que no se estire fea */
+}
+
+/* Estilo general para las etiquetas (Badges) */
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+    color: #0f172a; /* Texto oscuro para resaltar */
+    z-index: 5;
+}
+
+/* Colores específicos de los Badges usando tu paleta */
+.badge.feliz, .badge.comico {
+    background-color: var(--primary-color); /* Celeste oficial */
+}
+
+.badge.triste, .badge.molesto {
+    background-color: var(--danger-color); /* Rosa oficial */
+}
+
+/* Textos de la tarjeta */
+.pelicula-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin: 1.2rem 1rem 0.4rem 1rem;
+    font-weight: 600;
+}
+
+.pelicula-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 1rem;
+}
+
+/* ==========================================
+   8. ESTILOS DEL FOOTER (PIE DE PÁGINA)
+   ========================================== */
+.main-footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 5rem; /* Lo empuja bien hacia abajo de las tarjetas */
+    border-top: 1px solid var(--card-bg); /* Línea divisoria usando tu color de tarjeta */
+}
+
+.main-footer p {
+    font-size: 0.9rem;
+    color: var(--text-muted); /* Gris apagado oficial del grupo */
+    letter-spacing: 0.05rem;
+}
