@@ -59,14 +59,29 @@ function renderizarFavoritos() {
                     <span>⏱️ ${duracionTexto}</span>
                 </div>
 
-                <button class="btn btn-danger">
+                <button class="btn btn-danger btn-eliminar" data-id="${item.id}">
                     Eliminar 🗑️
                 </button>
             </div>
         `;
 
         containerFavoritos.appendChild(card);
+        const botonEliminar = card.querySelector(".btn-eliminar");
+
+        botonEliminar.addEventListener("click", () => {
+            eliminarFavorito(item.id);
+        });
     });
+}
+
+function eliminarFavorito(id) {
+    let favoritos = obtenerFavoritos();
+
+    favoritos = favoritos.filter(item => item.id !== id);
+
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+    renderizarFavoritos();
 }
 
 document.addEventListener("DOMContentLoaded", renderizarFavoritos);
