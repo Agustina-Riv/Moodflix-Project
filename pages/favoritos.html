@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mis Favoritos - MoodFlix</title>
+        <link rel ="stylesheet" href = "../css/styles.css"/>
+        <link rel="stylesheet" href= "../css/recomendador.css"/>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar container">
+                <a href="../index.html" class="nav-logo">MoodFlix </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="recomendador.html">Recomendador</a></li>
+                    <li><a href="favoritos.html" class="active">Mis Favoritos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container page-content">
+            <header class="hero-recomendador">
+                <h1>Mis Favoritos</h1>
+                <p>Tu selección perfecta para cada estado de ánimo.</p>
+            </header>
+
+            <section id="empty-state" class="empty-state">
+                <div class="empty-icon">📂</div>
+                <h2>Aún no guardaste nada</h2>
+                <p>Ve al recomendador y encuentra tu próximo contenido favorito para esos momentos especiales.</p>
+                <a href="recomendador.html" class="btn btn-primary">Ir al Recomendador</a>
+            </section>
+
+            <section id="favorites-container" class="grid-container">
+
+            </section>
+        </main>
+        <script src="../js/favoritos.js"></script>
+    </body>
+</html>
