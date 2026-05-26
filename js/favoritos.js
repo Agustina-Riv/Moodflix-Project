@@ -1,5 +1,8 @@
 const containerFavoritos = document.getElementById("favorites-container");
 const emptyState = document.getElementById("empty-state");
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
 
 function obtenerFavoritos() {
     return JSON.parse(localStorage.getItem("favoritos")) || [];
@@ -83,5 +86,9 @@ function eliminarFavorito(id) {
 
     renderizarFavoritos();
 }
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
 document.addEventListener("DOMContentLoaded", renderizarFavoritos);

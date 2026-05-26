@@ -6,6 +6,10 @@ const btnLimpiar = document.getElementById("btn-limpiar");
 const contenedor = document.getElementById("contenedor-cards");
 const mensaje = document.getElementById("mensaje-resultado");
 
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+
 const rangosTiempo = {
     "30-60": { min:0, max: 60 },
     "60-120": { min: 61, max: 120 },
@@ -166,3 +170,7 @@ cargarAnimoPrevio();
 if (localStorage.getItem("animo")) {
     filtrarContenido();
 };
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
