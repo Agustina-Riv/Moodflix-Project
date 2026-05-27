@@ -90,15 +90,32 @@ body {
    3. ESTILOS DEL HERO (CONTENEDOR Y TEXTOS)
    ========================================== */
 .hero-container {
-    min-height: 70vh; /* Ocupa buena parte de la pantalla */
+    min-height: 70vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 60px 2rem;
-    background-color: var(--bg-color); /* Fondo oficial oscuro del grupo */
     position: relative;
+    background-image: url('../img/Portada-moodf.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; 
+    overflow: hidden;
+}
+
+/*oscurecer la imagen de fondo*/
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
 }
 
 .hero-content {
@@ -109,7 +126,8 @@ body {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--text-main); /* Blanco/gris claro oficial */
+    color: var(--text-main); 
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9);
 }
 
 .hero-content .subtitulo {
@@ -118,6 +136,19 @@ body {
     line-height: 1.6;
     margin-bottom: 2.5rem;
 }
+
+.saludo-bienvenida {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color); 
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    display: inline-block;
+    white-space: normal;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
 
 /* ==========================================
    4. BOTONES DEL HERO
@@ -151,38 +182,58 @@ body {
 
 /* Botón "Ver mis favoritos" (Transparente con borde celeste) */
 .btn-secundario {
-    background-color: transparent;
+    background-color: rgba(20, 20, 20, 0.75);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
 
 .btn-secundario:hover {
     background-color: var(--primary-hover);
-    color: var(--text-main); /* Cambia el texto a blanco al pasar el mouse */
+    color: var(--text-main); 
     border-color: var(--primary-hover);
 }
 
 /* ==========================================
-   5. SECCIÓN: ¿QUÉ ES MOODFLIX?
+   5. SECCIÓN: ¿QUÉ ES MOODFLIX? (ESTRUCTURA LIMPIA)
    ========================================== */
 .moodflix-info {
-    max-width: 800px;
-    margin: 5rem auto; /* Centra la sección y le da aire arriba y abajo */
+    max-width: 1100px;
+    margin: 5rem auto;
     padding: 0 2rem;
-    text-align: center;
+    display: grid;
+    /* Creamos dos columnas: la izquierda para textos y la derecha para la imagen */
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem;
+    align-items: center; 
 }
 
 .moodflix-info h2 {
+    grid-column: 1; /* Se queda en la columna de la izquierda */
     font-size: 2.2rem;
-    color: var(--primary-color); /* Tu celeste oficial para destacar el título */
-    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
     font-weight: 700;
+    text-align: left;
 }
 
 .moodflix-info p {
+    grid-column: 1; /* El párrafo también se alinea a la izquierda abajo del título */
     font-size: 1.1rem;
-    color: var(--text-main); /* Tu texto claro oficial */
-    line-height: 1.7; /* Para que el párrafo respire y se lea cómodo */
+    color: var(--text-main);
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* La imagen flotando a la derecha */
+.moodflix-info .imagen-info {
+    grid-column: 2; /* Va a la columna derecha */
+    grid-row: 1 / span 2; 
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: var(--border-radius); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================
@@ -205,17 +256,17 @@ body {
 /* El contenedor que alinea los 3 pasos en fila */
 .pasos-contenedor {
     display: flex;
-    gap: 2rem; /* Separación pareja entre las tarjetas */
+    gap: 2rem; 
     justify-content: space-between;
 }
 
 /* Cada una de las 3 tarjetas de pasos */
 .paso {
-    flex: 1; /* Hace que las 3 tarjetas tengan exactamente el mismo ancho */
-    background-color: var(--card-bg); /* Fondo oficial de tarjeta del grupo */
+    flex: 1; 
+    background-color: var(--card-bg); 
     padding: 2.5rem 1.5rem;
-    border-radius: var(--border-radius); /* Tus 12px oficiales */
-    transition: transform var(--transition); /* Suavidad para el efecto hover */
+    border-radius: var(--border-radius); 
+    transition: transform var(--transition);
 }
 
 /* Efecto visual: la tarjeta sube un poquito cuando le pasás el mouse */
@@ -230,7 +281,7 @@ body {
 
 .paso h3 {
     font-size: 1.3rem;
-    color: var(--primary-color); /* Tus títulos en celeste brillante */
+    color: var(--primary-color); 
     margin-bottom: 1rem;
 }
 
@@ -268,7 +319,7 @@ body {
 .pelicula-card {
     background-color: var(--card-bg); /* Tu fondo oficial */
     border-radius: var(--border-radius); /* Tus 12px oficiales */
-    overflow: hidden; /* Corta las esquinas de la imagen para que sigan el radio de la tarjeta */
+    overflow: hidden; 
     transition: transform var(--transition);
     padding-bottom: 1.5rem;
 }
@@ -288,7 +339,7 @@ body {
 .imagen-contenedor img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta la imagen proporcionalmente para que no se estire fea */
+    object-fit: cover; 
 }
 
 /* Estilo general para las etiquetas (Badges) */
@@ -307,11 +358,11 @@ body {
 
 /* Colores específicos de los Badges usando tu paleta */
 .badge.feliz, .badge.comico {
-    background-color: var(--primary-color); /* Celeste oficial */
+    background-color: var(--primary-color); 
 }
 
 .badge.triste, .badge.molesto {
-    background-color: var(--danger-color); /* Rosa oficial */
+    background-color: var(--danger-color); 
 }
 
 /* Textos de la tarjeta */
@@ -334,12 +385,71 @@ body {
 .main-footer {
     text-align: center;
     padding: 3rem 2rem;
-    margin-top: 5rem; /* Lo empuja bien hacia abajo de las tarjetas */
-    border-top: 1px solid var(--card-bg); /* Línea divisoria usando tu color de tarjeta */
+    margin-top: 5rem; 
+    border-top: 1px solid var(--card-bg); 
 }
 
 .main-footer p {
     font-size: 0.9rem;
-    color: var(--text-muted); /* Gris apagado oficial del grupo */
+    color: var(--text-muted); 
     letter-spacing: 0.05rem;
+}
+
+/* Estilo para el saludo dinámico del Hero */
+.saludo-bienvenida {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color); 
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.hero-container {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('../img/Portada\ moodf.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+    background-attachment: scroll; 
+    
+    overflow: hidden;
+}
+
+/* --- EFECTO DE DIFUMINADO OSCURO EN LOS BORDES --- */
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Hace que el centro sea transparente y los bordes se oscurezcan */
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.8) 100%);
+    
+    z-index: 1; /* Se para arriba de la foto */
+}
+
+.hero-content {
+    position: relative; 
+    z-index: 2;      
+}
+
+/* --- EFECTO DE DIFUMINADO OSCURO EN LOS BORDES --- */
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.8) 100%);
+    
+    z-index: 1; 
 }
