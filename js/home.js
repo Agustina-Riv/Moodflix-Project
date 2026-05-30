@@ -1,30 +1,4 @@
-// Comprobación rápida en la consola
-console.log("¡El archivo JS de MoodFlix se está ejecutando correctamente!");
-
-// Función directa para el saludo
 function mostrarSaludo() {
-    const contenedorSaludo = document.getElementById("saludo-dinamico");
-    
-    if (contenedorSaludo) {
-        const hora = new Date().getHours();
-        let textoSaludo = "";
-
-        if (hora >= 6 && hora < 12) {
-            textoSaludo = "¡Buenos días! ☀️";
-        } else if (hora >= 12 && hora < 20) {
-            textoSaludo = "¡Buenas tardes! 🍿";
-        } else {
-            textoSaludo = "¡Buenas noches! 🎬";
-        }
-
-        contenedorSaludo.innerText = textoSaludo;
-    }
-}
-
-// Ejecutamos la función inmediatamente
-mostrarSaludo();
-
-document.addEventListener("DOMContentLoaded", () => {
     const contenedorSaludo = document.getElementById("saludo-dinamico");
     
     if (contenedorSaludo) {
@@ -34,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let textoSaludo = "";
 
         if (hora >= 6 && hora < 12) {
-            textoSaludo = "¡Buenos días!";
+            textoSaludo = "¡Buenos días! ☀️";
         } else if (hora >= 12 && hora < 20) {
             textoSaludo = "¡Buenas tardes!";
         } else {
@@ -53,5 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         escribirLetra();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarSaludo();
+
+    const gridPeliculas = document.getElementById('peliculasGrid');
+    const btnAtras = document.getElementById('prevBtn');
+    const btnAdelante = document.getElementById('nextBtn');
+
+    if (gridPeliculas && btnAdelante) {
+        btnAdelante.addEventListener('click', () => {
+            gridPeliculas.scrollLeft += 240;
+        });
+    }
+
+    if (gridPeliculas && btnAtras) {
+        btnAtras.addEventListener('click', () => {
+            gridPeliculas.scrollLeft -= 240;
+        });
     }
 });
