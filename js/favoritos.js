@@ -87,8 +87,4 @@ function eliminarFavorito(id) {
     renderizarFavoritos();
 }
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
 document.addEventListener("DOMContentLoaded", renderizarFavoritos);

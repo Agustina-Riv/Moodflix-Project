@@ -265,4 +265,10 @@ body {
     .nav-links a {
         font-size: 1.1rem;
     }
+
+    .footer-contenedor {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
 }
