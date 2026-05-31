@@ -147,6 +147,56 @@
     flex-grow: 1;
 }
 
+#contador{
+    color: var(--primary-color);
+}
+
+.acciones-favoritos {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+#btn-eliminar-todos {
+    width: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-buttons button {
+    width: auto;
+    min-width: 110px;
+}
+
 @media (max-width: 768px) {
     .hero-favoritos h1 {
         font-size: 2rem;

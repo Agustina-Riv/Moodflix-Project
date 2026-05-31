@@ -26,6 +26,15 @@
             <header class="hero-favoritos">
                 <h1>Mis Favoritos</h1>
                 <p>Tu selección perfecta para cada estado de ánimo.</p>
+
+                <p class="contador-favoritos" id="contador">
+                    Guardados: <span id="contador-favoritos">0</span>
+                </p>
+                <div class="acciones-favoritos">
+                    <button id="btn-eliminar-todos" class="btn btn-danger">
+                        Eliminar todos
+                    </button>
+                </div>
             </header>
 
             <section id="empty-state" class="empty-state">
@@ -66,6 +75,26 @@
                 <p>&copy; 2026 MoodFlix. Todos los derechos reservados.</p>
             </div>
         </footer>
+        <!-- Modal de confirmación -->
+        <div id="modal-confirmacion" class="modal">
+            <div class="modal-content">
+                <h3>Eliminar favoritos</h3>
+
+                <p>
+                    ¿Seguro que deseas eliminar todos los favoritos?
+                </p>
+
+                <div class="modal-buttons">
+                    <button id="cancelar-modal" class="btn">
+                        Cancelar
+                    </button>
+
+                    <button id="confirmar-modal" class="btn btn-danger">
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <script src="../js/main.js"></script>
         <script src="../js/favoritos.js"></script>
