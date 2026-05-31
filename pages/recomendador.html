@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moodflix</title>
+        <link rel ="icon" type="image/png" href="../icons/palomitas-de-maiz.png"/>
+        <link rel ="stylesheet" href = "../css/styles.css"/>
+        <link rel="stylesheet" href= "../css/recomendador.css"/>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="../index.html" class="nav-logo"><span class="logo">Mood<span>Flix</span></span></a>
+                <button class="menu-toggle" id="menu-toggle">
+                    ☰
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/recomendador.html" class="active">Recomendador</a></li>
+                    <li><a href="../pages/favoritos.html">Favoritos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-recomendador">
+                <h1>¿Qué querés ver hoy?</h1>
+                <p>Contanos como te sentís y cuanto tiempo tenes disponible. Nosotros te recomendamos</p>
+            </section>
+
+            <section class="seccion-filtros">
+                <div class="filtros-container">
+                    <div class="filtro-grupo">
+                        <label for="select-animo">¿Cómo te sentís?</label>
+                        <select id="select-animo">
+                            <option value="todos">-- Cualquier ánimo --</option>
+                            <option value="feliz">😊 Feliz</option>
+                            <option value="triste">😢 Triste</option>
+                            <option value="aburrido">😑 Aburrido</option>
+                            <option value="romantico">💕 Romantico</option>
+                        </select>
+                    </div>
+                    <div class="filtro-grupo">
+                        <label for="select-tiempo">¿Cuánto tiempo tenés?</label>
+                        <select id="select-tiempo">
+                            <option value="todos">-- Cualquier duración --</option>
+                            <option value="30-60">30 - 60 min</option>
+                            <option value="60-120">1 - 2 horas</option>
+                            <option value="120+">Más de 2 horas</option>
+                        </select>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <label for="select-tipo">¿Qué tipo de contenido te interesa?</label>
+                        <select id="select-tipo">
+                            <option value="todos">-- Cualquier tipo --</option>
+                            <option value="pelicula">🎬 Pelicula</option>
+                            <option value="serie">📺 Serie</option>
+                        </select>
+                    </div>
+
+                    <div class="filtros-botones">
+                        <button id="btn-filtrar" class="btn-primario">Buscar</button>
+                        <button id="btn-limpiar" class="btn-secundario">Limpiar</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <p id="mensaje-resultado"></p>
+
+            <section class="seccion-cards">
+                <div id="contenedor-cards" class="grilla-cards">
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-contenedor">
+                <div class="footer-marca">
+                    <span class="logo">Mood<span>Flix</span></span>
+                    <p>Tu estado de ánimo, tu película.</p>
+                </div>
+
+                <nav class="footer-nav">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/recomendador.html">Comenzar ahora</a></li>
+                        <li><a href="../pages/favoritos.html">Mis favoritos</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-creditos">
+                    <h3>Desarrollado por</h3>
+                    <p>Ailin Garay, Agus Rivoira y Mayra Limachi.</p>
+                    <p class="institucion">Proyecto 1 - 2026</p>
+                </div>
+            </div>
+
+            <div class="footer-derechos">
+                <p>&copy; 2026 MoodFlix. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <script src="../js/main.js"></script>
+        <script src="../js/catalogo.js"></script>
+        <script src="../js/recomendador.js"></script>
+    </body>
+</html>
