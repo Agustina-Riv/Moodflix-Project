@@ -6,10 +6,6 @@ const btnLimpiar = document.getElementById("btn-limpiar");
 const contenedor = document.getElementById("contenedor-cards");
 const mensaje = document.getElementById("mensaje-resultado");
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-
 const rangosTiempo = {
     "30-60": { min:0, max: 60 },
     "60-120": { min: 61, max: 120 },
@@ -67,8 +63,8 @@ function mostrarResultados(lista) {
         card.classList.add("card");
         card.setAttribute("data-id", item.id);
 
-        const tipoBadge = item.tipo === "serie" ? "Serie" : "Película";
-        const badgeExtra = item.tipo === "película" ? "card-badge--pelicula" : "";
+        const tipoBadge = item.tipo === "serie" ? "Serie" : "Pelicula";
+        const badgeExtra = item.tipo === "pelicula" ? "card-badge--pelicula" : "";
         const duracionTexto = item.tipo === "serie"
         ? `${item.duracion} min / ep.`
         : `${item.duracion} min`;
@@ -80,7 +76,7 @@ function mostrarResultados(lista) {
                 <span class="card-badge ${badgeExtra}">${tipoBadge}
                 </span>
             </div>
-            <div class="card.body">
+            <div class="card-body">
                 <h3 class="card-titulo">${item.titulo}</h3>
                 <p class="card-descripcion">${item.descripcion}</p>
                 <div class="card-meta">
@@ -141,16 +137,6 @@ function limpiarFiltros() {
     mensaje.style.display = "none";
 }
 
-function capitalizarAnimo(animo) {
-    const mapa = {
-        feliz: "😊 Feliz",
-        triste: "😢 Triste",
-        aburrido: "😐 Aburrido",
-        romantico: "❤️ Romántico"
-    };
-    return mapa[animo] || animo;
-}
-
 function cargarAnimoPrevio() {
     const animoGuardado = localStorage.getItem("animo");
     if (animoGuardado && selectAnimo.querySelector(`option[value="${animoGuardado}"]`)) {
@@ -161,16 +147,12 @@ function cargarAnimoPrevio() {
 btnFiltrar.addEventListener("click", filtrarContenido);
 btnLimpiar.addEventListener("click", limpiarFiltros);
 
-[selectAnimo, selectTiempo, selectTipo].forEach(sel => {
-    sel.addEventListener("change", filtrarContenido);
-});
+//[selectAnimo, selectTiempo, selectTipo].forEach(sel => {
+//    sel.addEventListener("change", filtrarContenido);
+//});
 
 cargarAnimoPrevio();
 
 if (localStorage.getItem("animo")) {
     filtrarContenido();
 };
-
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});

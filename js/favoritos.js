@@ -1,40 +1,33 @@
 const containerFavoritos = document.getElementById("favorites-container");
+const contadorFavoritos = document.getElementById("contador-favoritos");
 const emptyState = document.getElementById("empty-state");
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
+const btnEliminarTodos = document.getElementById("btn-eliminar-todos");
+const modal = document.getElementById("modal-confirmacion");
+const btnCancelar = document.getElementById("cancelar-modal");
+const btnConfirmar = document.getElementById("confirmar-modal");
 
 function obtenerFavoritos() {
     return JSON.parse(localStorage.getItem("favoritos")) || [];
-}
-
-function capitalizarAnimo(animo) {
-    const mapa = {
-        feliz: "😊 Feliz",
-        triste: "😢 Triste",
-        aburrido: "😐 Aburrido",
-        romantico: "❤️ Romántico"
-    };
-
-    return mapa[animo] || animo;
 }
 
 function renderizarFavoritos() {
     const favoritos = obtenerFavoritos();
 
     containerFavoritos.innerHTML = "";
+    contadorFavoritos.textContent = favoritos.length;
 
     if (favoritos.length === 0) {
         emptyState.style.display = "block";
         containerFavoritos.style.display = "none";
+        btnEliminarTodos.style.display = "none";
         return;
     }
 
     emptyState.style.display = "none";
     containerFavoritos.style.display = "grid";
-
+    
     favoritos.forEach(item => {
-        const tipoBadge = item.tipo === "serie" ? "Serie" : "Película";
+        const tipoBadge = item.tipo === "serie" ? "Serie" : "Pelicula";
 
         const duracionTexto = item.tipo === "serie"
             ? `${item.duracion} min / ep.`
@@ -87,8 +80,26 @@ function eliminarFavorito(id) {
     renderizarFavoritos();
 }
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+btnEliminarTodos.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
+
+btnCancelar.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+btnConfirmar.addEventListener("click", () => {
+    localStorage.removeItem("favoritos");
+
+    modal.style.display = "none";
+
+    renderizarFavoritos();
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 });
 
 document.addEventListener("DOMContentLoaded", renderizarFavoritos);

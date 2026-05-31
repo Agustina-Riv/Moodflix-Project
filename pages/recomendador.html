@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Moodflix - Recomendador</title>
+        <title>Moodflix</title>
+        <link rel ="icon" type="image/png" href="../icons/palomitas-de-maiz.png"/>
         <link rel ="stylesheet" href = "../css/styles.css"/>
         <link rel="stylesheet" href= "../css/recomendador.css"/>
     </head>
@@ -11,14 +12,14 @@
     <body>
         <header>
             <nav class="navbar">
-                <a href="index.html" class="nav-logo">Moodflix</a>
+                <a href="../index.html" class="nav-logo"><span class="logo">Mood<span>Flix</span></span></a>
                 <button class="menu-toggle" id="menu-toggle">
                     ☰
                 </button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="recomendador.html" class="active">Recomendador</a></li>
-                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/recomendador.html" class="active">Recomendador</a></li>
+                    <li><a href="../pages/favoritos.html">Favoritos</a></li>
                 </ul>
             </nav>
         </header>
@@ -55,7 +56,7 @@
                         <label for="select-tipo">¿Qué tipo de contenido te interesa?</label>
                         <select id="select-tipo">
                             <option value="todos">-- Cualquier tipo --</option>
-                            <option value="pelicula">🎬 Película</option>
+                            <option value="pelicula">🎬 Pelicula</option>
                             <option value="serie">📺 Serie</option>
                         </select>
                     </div>
@@ -77,6 +78,35 @@
             </section>
 
         </main>
+
+        <footer class="site-footer">
+            <div class="footer-contenedor">
+                <div class="footer-marca">
+                    <span class="logo">Mood<span>Flix</span></span>
+                    <p>Tu estado de ánimo, tu película.</p>
+                </div>
+
+                <nav class="footer-nav">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/recomendador.html">Comenzar ahora</a></li>
+                        <li><a href="../pages/favoritos.html">Mis favoritos</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-creditos">
+                    <h3>Desarrollado por</h3>
+                    <p>Ailin Garay, Agus Rivoira y Mayra Limachi.</p>
+                    <p class="institucion">Proyecto 1 - 2026</p>
+                </div>
+            </div>
+
+            <div class="footer-derechos">
+                <p>&copy; 2026 MoodFlix. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <script src="../js/main.js"></script>
         <script src="../js/catalogo.js"></script>
         <script src="../js/recomendador.js"></script>
     </body>
