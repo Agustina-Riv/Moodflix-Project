@@ -1,4 +1,3 @@
-
 .hero-container {
     position: relative;
     min-height: 100vh;
@@ -213,6 +212,7 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch; 
     width: 100%;
+    align-items: stretch;
 }
 
 .peliculas-grid::-webkit-scrollbar {
@@ -220,12 +220,16 @@
 }
 
 .pelicula-card {
-    flex: 0 0 220px; 
+    flex: 0 0 320px; 
     background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    padding-bottom: 1.5rem;
+    padding-bottom: 12px;
+    width: 320px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
 }
 
 .pelicula-card:hover {
@@ -233,17 +237,7 @@
 }
 
 .imagen-contenedor {
-    position: relative;
-    width: 100%;
-    height: 320px; 
     background-color: #0b111e; 
-}
-
-.imagen-contenedor img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block;
 }
 
 .btn-ver-mas {
@@ -322,88 +316,10 @@
 
 .prev-btn {
     left: 15px; 
-    z-index: 100;
 }
 
 .next-btn {
     right: 15px;
-    z-index: 100;
-}
-
-@media (max-width: 900px) {
-    .contenedor-peliculas {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-    }
-
-    .prev-btn {
-        left: 5px;
-        z-index: 150;
-    }
-    
-    .next-btn {
-        right: 5px;
-        z-index: 150;
-    }
-
-    .carrusel-btn {
-        padding: 0.6rem 1rem;
-        font-size: 1.2rem;
-    }
-
-    .pasos-contenedor {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .paso {
-        width: 100%; 
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 500px) {
-    .carrusel-wrapper {
-        position: relative;
-        padding: 0 10px;
-    }
-
-    .carrusel-btn {
-        width: 36px;
-        height: 36px;
-        padding: 0;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .prev-btn {
-        left: 10px !important;
-        z-index: 200 !important;
-    }
-
-    .next-btn {
-        right: 10px !important;
-        z-index: 200 !important;
-    }
-}
-
-.peliculas-grid {
-    display: flex;
-    align-items: stretch;
-}
-
-.pelicula-card {
-    flex: 0 0 320px; 
-    width: 320px;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 12px;
 }
 
 .pelicula-card .imagen-contenedor {
@@ -462,10 +378,35 @@
     color: #000000;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0 1.5rem; 
+@media (max-width: 900px) {
+
+    .prev-btn {
+        left: 5px;
     }
+    
+    .next-btn {
+        right: 5px;
+    }
+
+    .carrusel-btn {
+        padding: 0.6rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .pasos-contenedor {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .paso {
+        width: 100%; 
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
 
     .moodflix-info {
         grid-template-columns: 1fr; 
@@ -492,26 +433,29 @@
     .carrusel-btn {
         display: none;
     }
-
 }
 
-@media (max-width: 600px) { 
-    .carrusel-contenedor {
+@media (max-width: 500px) {
+    .carrusel-wrapper {
         position: relative;
-        overflow: visible; 
+        padding: 0 10px;
     }
 
-    .btn-carrusel { 
-        display: flex !important;
-        align-items: center;     
-        justify-content: center;  
-        flex-shrink: 0;          
-        width: 36px !important;  
-        height: 36px !important; 
-        border-radius: 50%;      
-        z-index: 10;
+    .carrusel-btn {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
-    .btn-izq { left: 5px; }
-    .btn-der { right: 5px; }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
 }

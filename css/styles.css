@@ -58,14 +58,17 @@ body {
 }
 
 .nav-logo {
-    font-family: var(--fuente-titulo);
-    font-size: 1.7rem;
-    letter-spacing: 0.06em;
-    color: var(--primary-color);
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -270,5 +273,14 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar { 
+        padding: 0 1.2rem; 
+    }
+    .nav-links { 
+        gap: 1.2rem; 
     }
 }
