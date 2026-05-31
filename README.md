@@ -16,6 +16,21 @@ La plataforma busca mejorar la experiencia de búsqueda de entretenimiento media
 
 ---
 
+## Idea elegida
+
+**MoodFlix - Recomendador de contenido según el estado de ánimo**
+
+El proyecto consiste en un recomendador de películas y series que adapta las sugerencias en función de diferentes criterios seleccionados por el usuario.
+
+Las recomendaciones se generan considerando múltiples variables:
+
+* Estado de ánimo.
+* Tiempo disponible.
+* Tipo de contenido.
+
+De esta forma, cada usuario recibe opciones más acordes a sus preferencias y situación actual.
+
+---
 ## Tecnologías utilizadas
 
 * HTML5
@@ -39,10 +54,8 @@ La plataforma busca mejorar la experiencia de búsqueda de entretenimiento media
 * Recordatorio automático del último estado de ánimo seleccionado.
 * Renderizado dinámico de tarjetas de contenido.
 * Mensajes dinámicos de resultados encontrados o sin coincidencias.
-* Estado visual para favoritos vacíos.
 * Notificaciones visuales (toast) al guardar contenido en favoritos.
 * Navegación responsive con menú hamburguesa para dispositivos móviles.
-* Organización del contenido en páginas independientes: Inicio, Recomendador y Favoritos.
 
 ---
 
@@ -52,6 +65,13 @@ La plataforma busca mejorar la experiencia de búsqueda de entretenimiento media
 MoodFlix/
 │
 ├── index.html
+│
+├── icons/
+│   └── palomitas-de-maiz.png
+│
+├── img/
+│   ├── portada moodf.png
+│   └── mujer mirando pelicula.jpg
 │
 ├── pages/
 │   ├── recomendador.html
@@ -80,20 +100,40 @@ MoodFlix/
 
 ---
 
-## Links
+## Instrucciones de uso
+
+1. Ingresar a la página principal.
+2. Acceder al recomendador.
+3. Seleccionar un estado de ánimo.
+4. Seleccionar el tiempo disponible.
+5. Elegir el tipo de contenido deseado.
+6. Presionar el botón de búsqueda.
+7. Explorar las recomendaciones obtenidas.
+8. Guardar contenidos en favoritos.
+9. Consultar los favoritos desde la sección correspondiente.
+
+---
+
+## Enlaces
 
 ### Repositorio
-
-[Agregar enlace al repositorio]
+[GitHub](https://github.com/Agustina-Riv/Moodflix-Project.git)
 
 ### Deploy
-
-[Agregar enlace al deploy]
+[Ver MoodFlix](https://agustina-riv.github.io/Moodflix-Project/)
 
 ---
 
 ## Uso de Inteligencia Artificial
 
-Durante el desarrollo del proyecto se utilizaron herramientas de Inteligencia Artificial como apoyo para consultas técnicas, resolución de dudas, optimización de código y asistencia en la documentación del proyecto.
+Durante el desarrollo de MoodFlix se utilizaron herramientas de Inteligencia Artificial como apoyo para:
 
-La implementación, adaptación y validación final de las funcionalidades fue realizada por los integrantes del grupo.
+- Resolución de dudas técnicas.
+- Optimización y refactorización de código.
+- Asistencia en la documentación del proyecto.
+- Consultas relacionadas con HTML, CSS y JavaScript.
+
+Todas las decisiones de diseño, implementación, adaptación y validación final de las funcionalidades fueron realizadas por los integrantes del equipo.
+
+### Evidencia de uso
+[Informe de uso de IA](https://drive.google.com/file/d/1tZVou3rAde-BklLWJ8TkOaLbKZGPylel/view?usp=sharing)
