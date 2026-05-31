@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/styles.css">
-        <link rel="stylesheet" href="../css/home.css">   
-        <title>Moodflix</title>
-</head>
+        <title>MoodFlix</title>
+        <link rel ="stylesheet" href = "../css/styles.css"/>
+        <link rel="stylesheet" href= "../css/home.css"/>
+    </head>
     <body>
         <header>
             <nav class="navbar">
@@ -24,17 +24,17 @@
 
         <section class="hero-container">
             <div class=" hero-content">
-                <p id="saludo-dinamico" class="saludo-bienvenida"></p>
-                <h1>Tu próximo plan según tu estado de ánimo</h1>
-            
-                <p class="subtitulo">
-                    MoodFlix analiza cómo te sentís y cuánto tiempo tenés para recomendarte películas y series, perfectas para tu estado.
-                </p>
-            
-                <div class="hero-botones">
-                    <a href="../pages/recomendador.html" class="btn-principal">Comenzar ahora</a>
-                    <a href="../pages/favoritos.html" id="btn-favoritos" class="btn-secundario">Ver mis favoritos</a>
-                </div>
+            <p id="saludo-dinamico" class="saludo-bienvenida"></p>
+            <h1>Tu próximo plan según tu estado de ánimo</h1>
+        
+            <p class="subtitulo">
+                MoodFlix analiza cómo te sentís y cuánto tiempo tenés para recomendarte películas y series, perfectas para tu estado.
+            </p>
+        
+            <div class="hero-botones">
+                <a href="../pages/recomendador.html" class="btn-principal">Comenzar ahora</a>
+                <a href="../pages/favoritos.html" id="btn-favoritos" class="btn-secundario">Ver mis favoritos</a>
+            </div>
             </div>
 
         </section>
@@ -66,87 +66,24 @@
                     <p>Nuestro recomendador hace la magia y te da la opción perfecta. ¡Dale play y listo!</p>
                 </div>
             </div>
+            </div>
         </section>
+
 
         <section class="mas-vistas">
             <h2>Las más vistas de la semana</h2>
-        
+    
             <div class="carrusel-wrapper">
                 <button class="carrusel-btn prev-btn" id="prevBtn">&#10094;</button>
-            
-                <div class="peliculas-grid" id="peliculasGrid">
-                
-                    <div class="pelicula-card">
-                        <div class="imagen-contenedor">
-                            <span class="badge feliz">Feliz</span>
-                            <img src="../img/shek.jpg" alt="Portada de la pelicula shrek">
-                        </div>
-                        <h3>Shrek</h3>
-                        <p>Serie • 25 min</p>
-                    </div>
-
-                    <div class="pelicula-card">
-                        <div class="imagen-contenedor">
-                            <span class="badge triste">Triste</span>
-                            <img src="../img/this is us.jpg" alt="Portada de la serie This is us">
-                        </div>
-                        <h3>This Is Us</h3>
-                        <p>Serie • 45 min por capítulo</p>
-                    </div>
-
-                <div class="pelicula-card">
-                    <div class="imagen-contenedor">
-                        <span class="badge molesto">Molesto</span>
-                        <img src="../img/John wick.jpg" alt="Portada de la pelicula John Wick">
-                    </div>
-                    <h3>John Wick</h3>
-                    <p>Película • 101 min</p>
-                </div>
-
-                <div class="pelicula-card">
-                    <div class="imagen-contenedor">
-                        <span class="badge comico">Cómico</span>
-                        <img src="../img/the office.jpg" alt="Portada dde la serie The office">
-                    </div>
-                    <h3>The Office</h3>
-                    <p>Serie • 22 min por capítulo</p>
-                </div>
-
-                <div class="pelicula-card">
-                    <div class="imagen-contenedor">
-                        <span class="badge comico">Ansiedad</span>
-                        <img src="../img/Whiplash.jpg" alt="Portada de la pelicula Whiplash">
-                    </div>
-                    <h3>Whiplash</h3>
-                    <p>Película • 106 min</p>
-                </div>
-
-                <div class="pelicula-card">
-                    <div class="imagen-contenedor">
-                        <span class="badge comico">Inspiración</span>
-                        <img src="../img/Anne with an E.jpg" alt="Portada de la serie Anne with and E">
-                    </div>
-                    <h3>Anne with an E</h3>
-                    <p>Serie • 45 min por capítulo</p>
-                </div>
-
-                <div class="pelicula-card">
-                    <div class="imagen-contenedor">
-                        <span class="badge comico">Miedo</span>
-                        <img src="../img/El conjuro.jpg" alt="Portada de la pelicula El conjuro">
-                    </div>
-                    <h3>El conjuro</h3>
-                    <p>Película  • 112 min</p>
-                </div>
-
-
-            </div>
-            
-            <button class="carrusel-btn next-btn" id="nextBtn">&#10095;</button>
+        
+                <div class="peliculas-grid" id="peliculasGrid"></div>
+        
+                <button class="carrusel-btn next-btn" id="nextBtn">&#10095;</button>
             </div>
         </section>
+            
 
-    <footer class="site-footer">
+        <footer class="site-footer">
             <div class="footer-contenedor">
                 <div class="footer-marca">
                     <span class="logo">Mood<span>Flix</span></span>
@@ -173,9 +110,9 @@
                 <p>&copy; 2026 MoodFlix. Todos los derechos reservados.</p>
             </div>
         </footer>
-        <script src="../js/main.js"></script>
+        <script src="../js/catalogo.js"></script>
         <script src="../js/home.js"></script> 
+  
     
-    </body>
     </body>
 </html>
