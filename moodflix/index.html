@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">   
     <title>Moodflix</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/home.css">   
+        <title>Moodflix</title>
 </head>
-<body>
-     <header>
+    <body>
+        <header>
             <nav class="navbar">
-                <a href="index.html" class="nav-logo">Moodflix</a>
+                <a href="../moodflix/index.html" class="nav-logo">Moodflix</a>
+                <button class="menu-toggle" id="menu-toggle">
+                    ☰
+                </button>
                 <ul class="nav-links">
-                    <li><a href="/moodflix/index.html" class="active">Inicio</a></li>
-                    <li><a href="/pages/recomendador.html" >Recomendador</a></li>
-                    <li><a href="/pages/favoritos.html">Favoritos</a></li>
+                    <li><a href="../moodflix/index.html" class="active">Inicio</a></li>
+                    <li><a href="../pages/recomendador.html" >Recomendador</a></li>
+                    <li><a href="../pages/favoritos.html">Favoritos</a></li>
                 </ul>
             </nav>
         </header>
@@ -64,51 +73,50 @@
         </div>
     </section>
 
-<section class="mas-vistas">
-    <h2>Películas y series recomendadas</h2>
+
+        <section class="mas-vistas">
+    <h2>Las más vistas de la semana</h2>
     
     <div class="carrusel-wrapper">
         <button class="carrusel-btn prev-btn" id="prevBtn">&#10094;</button>
         
-        <div class="peliculas-grid" id="peliculasGrid">
-            </div>
+        <div class="peliculas-grid" id="peliculasGrid"></div>
         
         <button class="carrusel-btn next-btn" id="nextBtn">&#10095;</button>
     </div>
 </section>
+            
 
-   <footer class="site-footer">
-    <div class="footer-contenedor">
-        <div class="footer-marca">
-            <span class="logo">Mood<span>Flix</span></span>
-            <p>Tu estado de ánimo, tu película.</p>
-        </div>
+    <footer class="site-footer">
+            <div class="footer-contenedor">
+                <div class="footer-marca">
+                    <span class="logo">Mood<span>Flix</span></span>
+                    <p>Tu estado de ánimo, tu película.</p>
+                </div>
 
-        <nav class="footer-nav">
-            <h3>Navegación</h3>
-            <ul>
-                <li><a href="/moodflix/index.html">Inicio</a></li>
-                <li><a href="/pages/recomendador.html">Comenzar ahora</a></li>
-                <li><a href="/pages/favoritos.html">Mis favoritos</a></li>
-            </ul>
-        </nav>
+                <nav class="footer-nav">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="../moodflix/index.html">Inicio</a></li>
+                        <li><a href="../pages/recomendador.html">Comenzar ahora</a></li>
+                        <li><a href="../pages/favoritos.html">Mis favoritos</a></li>
+                    </ul>
+                </nav>
 
-        <div class="footer-creditos">
-            <h3>Desarrollado por</h3>
-            <p>Ailin Garay, Agus Rivoira y Mayra Limachi.</p>
-            <p class="institucion">Proyecto 1 - 2026</p>
-        </div>
-    </div>
+                <div class="footer-creditos">
+                    <h3>Desarrollado por</h3>
+                    <p>Ailin Garay, Agus Rivoira y Mayra Limachi.</p>
+                    <p class="institucion">Proyecto 1 - 2026</p>
+                </div>
+            </div>
 
-    <div class="footer-derechos">
-        <p>&copy; 2026 MoodFlix. Todos los derechos reservados.</p>
-    </div>
-</footer>
-
-<script src="/js/catalogo.js"></script>
-  <script src="/js/home.js"></script> 
+            <div class="footer-derechos">
+                <p>&copy; 2026 MoodFlix. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <script src="/js/catalogo.js"></script>
+        <script src="/js/home.js"></script> 
   
-  
-
-</body>
+    
+    </body>
 </html>
