@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h3>${item.titulo}</h3>
                             <p>${item.tipo === 'serie' ? 'Serie' : 'Película'} • ${item.duracion} min</p>
                         </div>
-                        <a href="/pages/recomendador.html?animo=${animoBadge}" class="btn-ver-mas">Ver más</a>
+                        <a href="pages/recomendador.html?animo=${animoBadge}" class="btn-ver-mas">Ver más</a>
                     </div>
                 </div>
             `;
