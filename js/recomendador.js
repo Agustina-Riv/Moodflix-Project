@@ -76,7 +76,7 @@ function mostrarResultados(lista) {
                 <span class="card-badge ${badgeExtra}">${tipoBadge}
                 </span>
             </div>
-            <div class="card.body">
+            <div class="card-body">
                 <h3 class="card-titulo">${item.titulo}</h3>
                 <p class="card-descripcion">${item.descripcion}</p>
                 <div class="card-meta">
