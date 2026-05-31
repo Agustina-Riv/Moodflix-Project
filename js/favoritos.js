@@ -5,17 +5,6 @@ function obtenerFavoritos() {
     return JSON.parse(localStorage.getItem("favoritos")) || [];
 }
 
-function capitalizarAnimo(animo) {
-    const mapa = {
-        feliz: "😊 Feliz",
-        triste: "😢 Triste",
-        aburrido: "😐 Aburrido",
-        romantico: "❤️ Romántico"
-    };
-
-    return mapa[animo] || animo;
-}
-
 function renderizarFavoritos() {
     const favoritos = obtenerFavoritos();
 
@@ -31,7 +20,7 @@ function renderizarFavoritos() {
     containerFavoritos.style.display = "grid";
 
     favoritos.forEach(item => {
-        const tipoBadge = item.tipo === "serie" ? "Serie" : "Película";
+        const tipoBadge = item.tipo === "serie" ? "Serie" : "Pelicula";
 
         const duracionTexto = item.tipo === "serie"
             ? `${item.duracion} min / ep.`

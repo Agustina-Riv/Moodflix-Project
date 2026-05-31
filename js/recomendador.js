@@ -63,8 +63,8 @@ function mostrarResultados(lista) {
         card.classList.add("card");
         card.setAttribute("data-id", item.id);
 
-        const tipoBadge = item.tipo === "serie" ? "Serie" : "Película";
-        const badgeExtra = item.tipo === "película" ? "card-badge--pelicula" : "";
+        const tipoBadge = item.tipo === "serie" ? "Serie" : "Pelicula";
+        const badgeExtra = item.tipo === "pelicula" ? "card-badge--pelicula" : "";
         const duracionTexto = item.tipo === "serie"
         ? `${item.duracion} min / ep.`
         : `${item.duracion} min`;
@@ -135,16 +135,6 @@ function limpiarFiltros() {
     selectTipo.value = "todos";
     contenedor.innerHTML = "";
     mensaje.style.display = "none";
-}
-
-function capitalizarAnimo(animo) {
-    const mapa = {
-        feliz: "😊 Feliz",
-        triste: "😢 Triste",
-        aburrido: "😐 Aburrido",
-        romantico: "❤️ Romántico"
-    };
-    return mapa[animo] || animo;
 }
 
 function cargarAnimoPrevio() {

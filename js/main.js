@@ -6,3 +6,14 @@ if (menuToggle && navLinks) {
         navLinks.classList.toggle('active');
     });
 }
+
+function capitalizarAnimo(animo) {
+    const mapa = {
+        feliz: "😊 Feliz",
+        triste: "😢 Triste",
+        aburrido: "😐 Aburrido",
+        romantico: "❤️ Romántico"
+    };
+
+    return mapa[animo] || animo;
+}

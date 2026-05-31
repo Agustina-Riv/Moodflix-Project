@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="pelicula-info">
                         <div class="texto-bloque">
                             <h3>${item.titulo}</h3>
-                            <p>${item.tipo === 'serie' ? 'Serie' : 'Película'} • ${item.duracion} min</p>
+                            <p>${item.tipo === 'serie' ? 'Serie' : 'Pelicula'} • ${item.duracion} min</p>
                         </div>
                         <a href="pages/recomendador.html?animo=${animoBadge}" class="btn-ver-mas">Ver más</a>
                     </div>
